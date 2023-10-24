@@ -41,7 +41,7 @@ public class ReservationController {
         return repository.insert(reservation);
     }
 
-    @DeleteMapping("/")
+    @DeleteMapping("/{id}")
     void delete(@PathVariable String id)
     {
         repository.deleteById(id);
