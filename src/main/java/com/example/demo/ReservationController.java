@@ -42,12 +42,13 @@ public class ReservationController {
     }
 
     @DeleteMapping("/{id}")
-    void delete(@PathVariable String id)
-    {
+    void delete(@PathVariable String id) {
         repository.deleteById(id);
     }
+
     @PutMapping("/{id}")
-    Reservation update(@RequestBody Reservation reservation, @PathVariable String id){
-        return repository.save(reservation);
+    Reservation update(@RequestBody Reservation reservation, @PathVariable String id) {
+            reservation.id = id;
+            return repository.save(reservation);
     }
 }
