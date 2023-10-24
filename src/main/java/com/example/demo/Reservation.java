@@ -7,6 +7,7 @@ import nonapi.io.github.classgraph.json.Id;
 import java.util.*;
 
 import org.springframework.data.mongodb.core.mapping.Document;
+
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
@@ -14,8 +15,9 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class Reservation {
     @Id
     public String id;
+    public String guestEmail;
     public String guestName;
     public Date checkInDate;
     public Date checkOutDate;
-    public int roomNumber;
+    public String roomNumber;
 }
