@@ -1,0 +1,30 @@
+package com.example.demo;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+@CrossOrigin
+@RequestMapping("/reservation")
+public class ReservationController {
+    @Autowired
+    private ReservationRepository repository;
+    public ReservationController() {
+        
+    }
+    @GetMapping("/")
+    List<Reservation> getAll(){
+        return repository.findAll();
+    }
+    @GetMapping("/{id}")
+    Reservation getById(@PathVariable String id)
+    {
+        return repository.findById(id).orElse(null);
+    }
+}

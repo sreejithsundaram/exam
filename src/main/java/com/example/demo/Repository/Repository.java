@@ -1,4 +1,4 @@
-package com.example.Repo;
+package com.example.demo.Repository;
 
 import java.util.ArrayList;
 
