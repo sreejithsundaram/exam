@@ -14,6 +14,7 @@ import nonapi.io.github.classgraph.json.Id;
 public class Product {
     @Id
     public String id;
+    public double price;
     public String name;
     public String image_url;
 }
